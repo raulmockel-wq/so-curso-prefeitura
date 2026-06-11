@@ -24,6 +24,7 @@
   header .grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.93))}
   header .wrap{position:relative;z-index:2}
   .logo{height:52px;margin-bottom:26px}
+  .logo-b{display:none}
   .eyebrow{color:var(--lime);font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;margin-bottom:14px}
   h1{font-size:clamp(2rem,5.5vw,3.4rem);font-weight:800;line-height:1.02;letter-spacing:-.02em}
   h1 span{color:var(--lime)}
@@ -89,7 +90,8 @@
   @media print{
     body{background:#fff;color:#111}
     header .bg,header .grad{display:none}
-    .logo{filter:invert(1)}
+    .logo-w{display:none}
+    .logo-b{display:inline-block}
     section,header{border-color:#ddd}
     .item,.cc,.hl,.price,table,th{background:#fff !important;color:#111}
     .who .ph,header .bg{display:none}
@@ -103,7 +105,8 @@
 <header>
   <div class="bg"></div><div class="grad"></div>
   <div class="wrap">
-    <img class="logo" src="assets/logo-branca.png" alt="Service One" />
+    <img class="logo logo-w" src="assets/logo-branca.png" alt="Service One" />
+    <img class="logo logo-b" src="assets/logo-preta.png" alt="Service One" />
     <div class="eyebrow">Descrição do curso · São José dos Pinhais / PR</div>
     <h1>Curso Presencial de Manutenção de Celulares<br><span>Do zero à bancada</span></h1>
     <p class="sub">Formação 100% prática em reparo de smartphones e microsoldagem.</p>
@@ -118,8 +121,8 @@
   <p class="big">É um curso para quem quer aprender uma profissão de mercado, mesmo começando do zero. Em poucos dias, de forma totalmente prática, o aluno aprende a abrir, diagnosticar e consertar smartphones na bancada profissional da Service One.</p>
 
   <div class="hl">
-    <div class="t">100% prático. <span class="lime">Zero blá-blá-blá.</span></div>
-    <p>Aqui o aluno <b>não fica só ouvindo teoria</b>. Desde o primeiro dia ele está com as mãos no aparelho, na bancada. Quem ensina são <b>técnicos com mais de 14 anos de bancada</b>, que vivem disso todos os dias, dentro de uma loja real de assistência. Não é curso de quem só fala bonito: é de quem faz.</p>
+    <div class="t">100% prático. <span class="lime">Direto na bancada.</span></div>
+    <p>Aqui o aluno <b>não fica só ouvindo teoria</b>. Desde o primeiro dia ele está com as mãos no aparelho, na bancada. Quem ensina são <b>técnicos com mais de 14 anos de bancada</b>, que vivem disso todos os dias, dentro de uma loja real de assistência. É um curso de quem faz, para quem quer aprender a fazer.</p>
   </div>
 </div></section>
 
@@ -127,7 +130,7 @@
 <section><div class="wrap">
   <div class="kick">O nosso diferencial</div>
   <h2>Vivência de bancada, não teoria</h2>
-  <p class="mut">O mercado está cheio de curso que fala muito e entrega slide. O nosso é o oposto: o aluno aprende a <b style="color:var(--lime)">vivência real</b> de quem está há mais de 14 anos na bancada, consertando aparelho de cliente todos os dias.</p>
+  <p class="mut">Muitos cursos entregam só teoria. O nosso é o contrário: o aluno aprende a <b style="color:var(--lime)">vivência real</b> de quem está há mais de 14 anos na bancada, consertando aparelhos de clientes todos os dias.</p>
   <div class="learn">
     <div class="item"><h3><span class="c">✓</span> Quem ensina vive disso</h3><p>Técnicos com mais de 14 anos de bancada, não palestrantes. O aluno aprende com quem faz acontecer todos os dias.</p></div>
     <div class="item"><h3><span class="c">✓</span> Dentro de uma loja real</h3><p>O curso acontece na estrutura da Service One, uma assistência com nota 5,0 no Google, e não numa sala montada só para o curso.</p></div>
@@ -187,7 +190,12 @@
       <div class="v"><small>R$</small> 1.297</div>
       <div class="sub">Por aluno</div>
     </div>
-    <div class="desc">Condição especial para a parceria com a Prefeitura de São José dos Pinhais. Cada turma forma <b>6 alunos por bancada</b>, com material e estrutura da Service One inclusos.</div>
+    <div class="price">
+      <div class="badge">Turma fechada</div>
+      <div class="v"><small>R$</small> 7.782</div>
+      <div class="sub">Por turma · 6 alunos</div>
+    </div>
+    <div class="desc">Condição especial para a parceria com a Prefeitura de São José dos Pinhais. Cada turma forma <b>6 alunos por bancada</b> (6 × R$ 1.297 = R$ 7.782), com material e estrutura da Service One inclusos.</div>
   </div>
 </div></section>
 
@@ -205,7 +213,8 @@
 
 <!-- CONTATO -->
 <footer><div class="wrap">
-  <img class="logo" src="assets/logo-branca.png" alt="Service One" style="height:40px;margin-bottom:22px" />
+  <img class="logo logo-w" src="assets/logo-branca.png" alt="Service One" style="height:40px;margin-bottom:22px" />
+  <img class="logo logo-b" src="assets/logo-preta.png" alt="Service One" style="height:40px;margin-bottom:22px" />
   <div class="ft">
     <div><b>Empresa</b>Service One · Loja e assistência em um só lugar</div>
     <div><b>WhatsApp</b>(41) 99880-4410</div>

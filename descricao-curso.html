@@ -87,16 +87,11 @@
     .learn,.who{grid-template-columns:1fr}
     .cards{grid-template-columns:1fr 1fr}
   }
+  /* mantem o visual escuro (fundo preto + cores + fotos) tambem no PDF */
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   @media print{
-    body{background:#fff;color:#111}
-    header .bg,header .grad{display:none}
-    .logo-w{display:none}
-    .logo-b{display:inline-block}
-    section,header{border-color:#ddd}
-    .item,.cc,.hl,.price,table,th{background:#fff !important;color:#111}
-    .who .ph,header .bg{display:none}
-    .mut,.item p,.cc small,.ch-note,.inv .desc,.ft{color:#444}
-    .kick,.eyebrow,.lime,td b,.inv .desc b{color:#111}
+    @page{margin:0}
+    .item,.cc,.price,.hl,table,.who .ph{break-inside:avoid}
   }
 </style>
 </head>

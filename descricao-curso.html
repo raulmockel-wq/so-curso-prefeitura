@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Service One · Descrição do Curso de Manutenção de Celulares</title>
+<style>
+  :root{
+    --bg:#000; --card:#121412; --card2:#0e110e; --line:#262a26;
+    --lime:#B4D335; --white:#fff; --muted:#9aa09a; --ink:#e9ece9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+  .lime{color:var(--lime)}
+
+  /* header */
+  header{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:64px 0 56px}
+  header .bg{position:absolute;inset:0;background:url('assets/laboratorio.jpg') center/cover;opacity:.22}
+  header .grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.6),rgba(0,0,0,.93))}
+  header .wrap{position:relative;z-index:2}
+  .logo{height:52px;margin-bottom:26px}
+  .eyebrow{color:var(--lime);font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;margin-bottom:14px}
+  h1{font-size:clamp(2rem,5.5vw,3.4rem);font-weight:800;line-height:1.02;letter-spacing:-.02em}
+  h1 span{color:var(--lime)}
+  .sub{color:var(--muted);margin-top:16px;font-size:1.1rem}
+  .pill{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:.9rem;margin-top:22px}
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--lime)}
+
+  section{padding:46px 0;border-bottom:1px solid #141714}
+  h2{font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
+  .kick{color:var(--lime);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.74rem;margin-bottom:12px}
+  p.big{font-size:1.15rem;color:var(--ink)}
+  p.mut{color:var(--muted);font-size:1.05rem;margin-top:10px;max-width:760px}
+
+  /* destaque pratico */
+  .hl{background:var(--card);border:1px solid var(--lime);border-radius:22px;padding:34px;margin-top:8px;box-shadow:0 0 0 1px var(--lime) inset}
+  .hl .t{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;line-height:1.05}
+  .hl p{color:var(--ink);margin-top:14px;font-size:1.08rem}
+  .hl b{color:var(--lime)}
+
+  /* listas de aprendizado */
+  .learn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+  .item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+  .item h3{font-size:1.08rem;font-weight:700;display:flex;gap:10px;align-items:center}
+  .item h3 .c{color:var(--lime)}
+  .item p{color:var(--muted);font-size:.98rem;margin-top:6px}
+
+  /* formato cards */
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+  .cc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center}
+  .cc .n{font-size:2rem;font-weight:800;color:var(--lime);line-height:1}
+  .cc small{display:block;color:var(--muted);margin-top:8px;font-size:.92rem}
+
+  /* tabela carga horaria */
+  table{width:100%;border-collapse:collapse;margin-top:24px;font-size:1rem;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  th,td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:var(--card2);color:var(--lime);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+  tr:last-child td{border-bottom:0}
+  td b{color:var(--white)}
+  .ch-note{color:var(--muted);font-size:.95rem;margin-top:14px}
+
+  /* investimento */
+  .inv{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-top:24px}
+  .price{background:var(--card);border:1px solid var(--lime);border-radius:20px;padding:28px 34px;box-shadow:0 0 0 1px var(--lime) inset;text-align:center}
+  .price .badge{display:inline-block;background:var(--lime);color:#000;font-weight:800;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:12px}
+  .price .v{font-size:2.8rem;font-weight:800}
+  .price .v small{font-size:1.1rem;color:var(--muted);font-weight:600}
+  .price .sub{color:var(--muted);font-size:.95rem;margin-top:4px}
+  .inv .desc{flex:1;min-width:240px;color:var(--muted);font-size:1.05rem}
+  .inv .desc b{color:var(--white)}
+
+  /* quem ensina */
+  .who{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin-top:8px}
+  .who .ph{min-height:240px;border-radius:18px;border:1px solid var(--line);background:url('assets/tecnico.jpg') center/cover}
+
+  footer{padding:40px 0 60px}
+  .ft{display:flex;flex-wrap:wrap;gap:16px 40px;color:var(--muted)}
+  .ft b{color:var(--lime);display:block;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+
+  @media(max-width:720px){
+    .learn,.who{grid-template-columns:1fr}
+    .cards{grid-template-columns:1fr 1fr}
+  }
+  @media print{
+    body{background:#fff;color:#111}
+    header .bg,header .grad{display:none}
+    .logo{filter:invert(1)}
+    section,header{border-color:#ddd}
+    .item,.cc,.hl,.price,table,th{background:#fff !important;color:#111}
+    .who .ph,header .bg{display:none}
+    .mut,.item p,.cc small,.ch-note,.inv .desc,.ft{color:#444}
+    .kick,.eyebrow,.lime,td b,.inv .desc b{color:#111}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bg"></div><div class="grad"></div>
+  <div class="wrap">
+    <img class="logo" src="assets/logo-branca.png" alt="Service One" />
+    <div class="eyebrow">Descrição do curso · São José dos Pinhais / PR</div>
+    <h1>Curso Presencial de Manutenção de Celulares<br><span>Do zero à bancada</span></h1>
+    <p class="sub">Formação 100% prática em reparo de smartphones e microsoldagem.</p>
+    <span class="pill"><span class="dot"></span> Proposta de parceria · Prefeitura de São José dos Pinhais</span>
+  </div>
+</header>
+
+<!-- SOBRE -->
+<section><div class="wrap">
+  <div class="kick">Sobre o curso</div>
+  <h2>Aprender consertando, na bancada de verdade</h2>
+  <p class="big">É um curso para quem quer aprender uma profissão de mercado, mesmo começando do zero. Em poucos dias, de forma totalmente prática, o aluno aprende a abrir, diagnosticar e consertar smartphones na bancada profissional da Service One.</p>
+
+  <div class="hl">
+    <div class="t">100% prático. <span class="lime">Zero blá-blá-blá.</span></div>
+    <p>Aqui o aluno <b>não fica só ouvindo teoria</b>. Desde o primeiro dia ele está com as mãos no aparelho, na bancada. Quem ensina são <b>técnicos com mais de 14 anos de bancada</b>, que vivem disso todos os dias, dentro de uma loja real de assistência. Não é curso de quem só fala bonito: é de quem faz.</p>
+  </div>
+</div></section>
+
+<!-- DIFERENCIAL -->
+<section><div class="wrap">
+  <div class="kick">O nosso diferencial</div>
+  <h2>Vivência de bancada, não teoria</h2>
+  <p class="mut">O mercado está cheio de curso que fala muito e entrega slide. O nosso é o oposto: o aluno aprende a <b style="color:var(--lime)">vivência real</b> de quem está há mais de 14 anos na bancada, consertando aparelho de cliente todos os dias.</p>
+  <div class="learn">
+    <div class="item"><h3><span class="c">✓</span> Quem ensina vive disso</h3><p>Técnicos com mais de 14 anos de bancada, não palestrantes. O aluno aprende com quem faz acontecer todos os dias.</p></div>
+    <div class="item"><h3><span class="c">✓</span> Dentro de uma loja real</h3><p>O curso acontece na estrutura da Service One, uma assistência com nota 5,0 no Google, e não numa sala montada só para o curso.</p></div>
+    <div class="item"><h3><span class="c">✓</span> Nos defeitos do dia a dia</h3><p>Os aparelhos e os problemas são os mesmos que chegam no balcão. O aluno treina no que vai encontrar de verdade no mercado.</p></div>
+    <div class="item"><h3><span class="c">✓</span> Sai sabendo fazer</h3><p>São 5 dias com a mão no aparelho. No fim, o aluno não viu como conserta: ele conserta.</p></div>
+  </div>
+</div></section>
+
+<!-- O QUE APRENDE -->
+<section><div class="wrap">
+  <div class="kick">O que o aluno vai aprender</div>
+  <h2>Do básico até a microsoldagem</h2>
+  <div class="learn">
+    <div class="item"><h3><span class="c">01</span> Conhecer o aparelho por dentro</h3><p>Como funciona um smartphone: a placa, os componentes e os conectores. Entender o que tem dentro antes de pôr a mão.</p></div>
+    <div class="item"><h3><span class="c">02</span> Conhecer e usar as ferramentas</h3><p>Estação de solda, soprador de ar quente, microscópio, fonte de alimentação e multímetro. Saber para que serve cada uma e como usar com segurança.</p></div>
+    <div class="item"><h3><span class="c">03</span> Manusear e trocar peças</h3><p>Abrir o aparelho e fazer as trocas mais pedidas: tela, bateria, conector de carga, câmeras e alto-falante.</p></div>
+    <div class="item"><h3><span class="c">04</span> Aprender a medir</h3><p>Usar o multímetro para encontrar o defeito: medir tensão, testar continuidade e identificar curto-circuito na placa.</p></div>
+    <div class="item"><h3><span class="c">05</span> Soldar e dessoldar com técnica</h3><p>Técnicas de solda e a microsoldagem feita sob o microscópio, trocando componentes minúsculos da placa.</p></div>
+    <div class="item"><h3><span class="c">06</span> Diagnosticar defeitos</h3><p>O passo a passo para descobrir o problema: aparelho que não liga, não carrega ou fica sem imagem.</p></div>
+    <div class="item"><h3><span class="c">07</span> Boas práticas de bancada</h3><p>Organização, cuidado com a estática e segurança no trabalho, do jeito que se faz numa assistência profissional.</p></div>
+    <div class="item"><h3><span class="c">08</span> Como atender e orçar</h3><p>Noções para quem quer montar a própria bancada: como receber o aparelho, orçar o serviço e começar a gerar renda.</p></div>
+  </div>
+</div></section>
+
+<!-- FORMATO -->
+<section><div class="wrap">
+  <div class="kick">Como funciona</div>
+  <h2>Turmas pequenas, atenção de verdade</h2>
+  <div class="cards">
+    <div class="cc"><div class="n">5</div><small>Dias de curso</small></div>
+    <div class="cc"><div class="n">100%</div><small>Prático, na bancada</small></div>
+    <div class="cc"><div class="n">2</div><small>Professores por turma</small></div>
+    <div class="cc"><div class="n">6</div><small>Alunos por bancada</small></div>
+  </div>
+  <p class="mut" style="margin-top:22px">Curso presencial, realizado no laboratório da Service One em São José dos Pinhais. Com no máximo 6 alunos por bancada e 2 professores acompanhando, cada aluno tem espaço para praticar e ser corrigido de perto.</p>
+</div></section>
+
+<!-- CARGA HORARIA -->
+<section><div class="wrap">
+  <div class="kick">Carga horária</div>
+  <h2>5 dias intensivos de prática</h2>
+  <table>
+    <tr><th>Turma</th><th>Horário</th><th>Por dia</th><th>Duração</th><th>Carga horária</th></tr>
+    <tr><td>Manhã</td><td>08:00 às 10:30</td><td>2h30</td><td>5 dias</td><td><b>12h30</b></td></tr>
+    <tr><td>Tarde</td><td>14:00 às 16:30</td><td>2h30</td><td>5 dias</td><td><b>12h30</b></td></tr>
+  </table>
+  <p class="ch-note">Duas turmas por dia (manhã e tarde), com a mesma carga horária: <b style="color:var(--lime)">12h30 de prática intensiva</b> em 5 dias (2h30 por dia × 5 dias).</p>
+</div></section>
+
+<!-- INVESTIMENTO -->
+<section><div class="wrap">
+  <div class="kick">Investimento</div>
+  <h2>Valor por aluno</h2>
+  <div class="inv">
+    <div class="price">
+      <div class="badge">Parceria Prefeitura</div>
+      <div class="v"><small>R$</small> 1.297</div>
+      <div class="sub">Por aluno</div>
+    </div>
+    <div class="desc">Condição especial para a parceria com a Prefeitura de São José dos Pinhais. Cada turma forma <b>6 alunos por bancada</b>, com material e estrutura da Service One inclusos.</div>
+  </div>
+</div></section>
+
+<!-- QUEM ENSINA -->
+<section><div class="wrap">
+  <div class="kick">Quem ensina</div>
+  <div class="who">
+    <div>
+      <h2>Técnicos de bancada, não palestrantes</h2>
+      <p class="mut">O curso é conduzido por técnicos com <b style="color:var(--lime)">mais de 14 anos de mercado</b>, que vivem de bancada todos os dias dentro da Service One, loja e assistência técnica com <b style="color:var(--lime)">nota 5,0 no Google</b> em São José dos Pinhais. O aluno aprende com quem faz acontecer de verdade, no dia a dia da profissão.</p>
+    </div>
+    <div class="ph"></div>
+  </div>
+</div></section>
+
+<!-- CONTATO -->
+<footer><div class="wrap">
+  <img class="logo" src="assets/logo-branca.png" alt="Service One" style="height:40px;margin-bottom:22px" />
+  <div class="ft">
+    <div><b>Empresa</b>Service One · Loja e assistência em um só lugar</div>
+    <div><b>WhatsApp</b>(41) 99880-4410</div>
+    <div><b>Endereço</b>R. Joinville, 2422 · São Pedro · SJP/PR</div>
+  </div>
+</div></footer>
+
+</body>
+</html>
